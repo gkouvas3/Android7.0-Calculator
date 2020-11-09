@@ -74,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 newNumber.setText("");
                 result.setText("");
+                operand1 = null;
+                operand2 = null;
                 pendingOperation = "";
             }
         });
@@ -135,6 +137,9 @@ public class MainActivity extends AppCompatActivity {
                 case "/":
                     if(operand2!=0){
                         operand1/=operand2;
+                    }else{
+                        result.setText("ERROR");
+                        return;
                     }
                     break;
             }
